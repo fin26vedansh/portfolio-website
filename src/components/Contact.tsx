@@ -48,9 +48,6 @@ const Contact = () => {
               Open to <br /> <span>equity research, financial analysis</span> and{" "}
               <span>business strategy</span> roles
             </h2>
-            <h5>
-              <MdCopyright /> 2026 Vedansh Jaiswal
-            </h5>
           </div>
         </div>
       </div>
