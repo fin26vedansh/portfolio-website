@@ -43,12 +43,6 @@ const Contact = () => {
               Download PDF <MdArrowOutward />
             </a>
           </div>
-          <div className="contact-box">
-            <h2>
-              Open to <br /> <span>equity research, financial analysis</span> and{" "}
-              <span>business strategy</span> roles
-            </h2>
-          </div>
         </div>
       </div>
     </div>
