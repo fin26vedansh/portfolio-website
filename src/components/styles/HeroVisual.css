@@ -1,0 +1,247 @@
+.hero-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(74vw, 340px);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-panel {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+/* No CSS transform or keyframes here on purpose: GSAP animates this element's
+   transform and opacity on scroll, and a `forwards` CSS animation would win
+   against GSAP's inline styles. */
+.hero-glow {
+  position: absolute;
+  left: 4%;
+  top: 0%;
+  width: 92%;
+  height: 100%;
+  background-color: #a878ff;
+  box-shadow: inset 40px 30px 70px 0px rgba(85, 0, 255, 0.55);
+  filter: blur(55px);
+  border-radius: 50%;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+/* ---------- panel chrome ---------- */
+.hero-frame {
+  fill: rgba(255, 255, 255, 0.025);
+  stroke: rgba(194, 164, 255, 0.28);
+  stroke-width: 1;
+}
+.hero-rule {
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 1;
+}
+.hero-grid {
+  stroke: rgba(255, 255, 255, 0.07);
+  stroke-width: 1;
+  stroke-dasharray: 3 7;
+}
+.hero-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  fill: #e6dcff;
+}
+.hero-label-dim {
+  fill: #8ee6b4;
+  animation: heroBlink 2.6s steps(1, end) infinite;
+}
+.hero-led {
+  fill: #c2a4ff;
+  opacity: 0.35;
+}
+.hero-led-1 {
+  animation: heroLed 3.2s ease-in-out infinite;
+}
+.hero-led-2 {
+  animation: heroLed 3.2s ease-in-out 0.4s infinite;
+}
+.hero-led-3 {
+  animation: heroLed 3.2s ease-in-out 0.8s infinite;
+}
+
+/* ---------- candles ---------- */
+.hero-candle {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  opacity: 0;
+  animation: heroCandleIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-candle-up .hero-body {
+  fill: rgba(126, 224, 176, 0.9);
+}
+.hero-candle-up .hero-wick {
+  stroke: rgba(126, 224, 176, 0.7);
+}
+.hero-candle-down .hero-body {
+  fill: rgba(255, 138, 178, 0.75);
+}
+.hero-candle-down .hero-wick {
+  stroke: rgba(255, 138, 178, 0.6);
+}
+.hero-wick {
+  stroke-width: 1.2;
+}
+
+/* ---------- price path ---------- */
+.hero-path {
+  fill: none;
+  stroke: #c2a4ff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(194, 164, 255, 0.55));
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: heroDraw 9s ease-in-out 1.1s infinite;
+}
+
+/* ---------- target line ---------- */
+.hero-target {
+  opacity: 0;
+  animation: heroFadeIn 1.2s 1.9s ease-out forwards;
+}
+.hero-target-line {
+  stroke: rgba(194, 164, 255, 0.7);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+}
+.hero-pill {
+  fill: rgba(194, 164, 255, 0.16);
+  stroke: rgba(194, 164, 255, 0.55);
+  stroke-width: 1;
+}
+.hero-pill-text {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  fill: #e6dcff;
+}
+
+/* ---------- ticker ---------- */
+.hero-ticker {
+  animation: heroTicker 16s linear infinite;
+}
+.hero-ticker-text {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  fill: rgba(230, 220, 255, 0.45);
+}
+
+@keyframes heroCandleIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.05) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+@keyframes heroDraw {
+  0% {
+    stroke-dashoffset: 620;
+  }
+  35%,
+  75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -620;
+  }
+}
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes heroTicker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-368px);
+  }
+}
+@keyframes heroBlink {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0.15;
+  }
+}
+@keyframes heroLed {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-visual {
+    width: min(60vw, 420px);
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .hero-visual {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    z-index: 8;
+  }
+  .hero-stage {
+    width: clamp(300px, 30vw, 520px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-candle,
+  .hero-target,
+  .hero-label-dim,
+  .hero-led-1,
+  .hero-led-2,
+  .hero-led-3,
+  .hero-ticker,
+  .hero-path {
+    animation: none;
+  }
+  .hero-candle,
+  .hero-target {
+    opacity: 1;
+  }
+  .hero-path {
+    stroke-dashoffset: 0;
+  }
+}

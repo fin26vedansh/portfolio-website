@@ -1,0 +1,333 @@
+.work-illustration {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+.wi-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.wi-frame {
+  fill: rgba(255, 255, 255, 0.022);
+  stroke: rgba(194, 164, 255, 0.22);
+  stroke-width: 1;
+}
+.wi-axis {
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 1;
+}
+.wi-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 1px;
+}
+.wi-screen-label {
+  font-size: 10px;
+  fill: #e6dcff;
+}
+.wi-screen-dim {
+  font-size: 9px;
+  fill: rgba(230, 220, 255, 0.42);
+}
+
+/* ---------- 01 ritual ---------- */
+.wi-mirror {
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(194, 164, 255, 0.45);
+  stroke-width: 1.2;
+}
+.wi-sheen {
+  stroke: rgba(230, 220, 255, 0.22);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.wi-bulb {
+  fill: #c2a4ff;
+  opacity: 0.22;
+  animation: wiBulb 2.8s ease-in-out infinite;
+}
+
+/* ---------- 02 salon ---------- */
+.wi-bottle {
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(194, 164, 255, 0.55);
+  stroke-width: 1.4;
+}
+.wi-liquid {
+  fill: rgba(194, 164, 255, 0.4);
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  transform: scaleY(0);
+  animation: wiGrowY 1.6s 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.wi-bottle-label {
+  fill: rgba(230, 220, 255, 0.5);
+}
+.wi-droplet {
+  fill: #c2a4ff;
+  opacity: 0;
+  animation: wiDrop 2.6s ease-in infinite;
+}
+.wi-seal {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: wiStamp 0.7s 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.wi-seal-ring {
+  fill: none;
+  stroke: rgba(194, 164, 255, 0.7);
+  stroke-width: 1.4;
+}
+.wi-seal-inner {
+  stroke-dasharray: 4 5;
+  opacity: 0.7;
+}
+.wi-seal-text {
+  font-size: 11px;
+  font-weight: 600;
+  fill: #e6dcff;
+}
+
+/* ---------- 03 shelf ---------- */
+.wi-shelf-line {
+  stroke: rgba(194, 164, 255, 0.5);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.wi-vial,
+.wi-vial-cap {
+  fill: rgba(194, 164, 255, 0.18);
+  stroke: rgba(194, 164, 255, 0.45);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  transform: scaleY(0);
+  animation: wiGrowY 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.wi-note {
+  fill: rgba(255, 255, 255, 0.035);
+  stroke: rgba(194, 164, 255, 0.3);
+  stroke-width: 1;
+}
+.wi-note-row {
+  opacity: 0;
+  animation: wiFade 0.5s ease-out forwards;
+}
+.wi-note-mark {
+  font-size: 12px;
+}
+.wi-ok {
+  fill: #7ee0b0;
+}
+.wi-no {
+  fill: rgba(255, 138, 178, 0.85);
+}
+.wi-note-line {
+  fill: rgba(230, 220, 255, 0.35);
+}
+
+/* ---------- 04 compass ---------- */
+.wi-route {
+  fill: none;
+  stroke: rgba(194, 164, 255, 0.8);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 6 7;
+  animation: wiTravel 12s linear infinite;
+}
+.wi-pin {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: wiPinDrop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.wi-pin-body {
+  fill: rgba(194, 164, 255, 0.85);
+}
+.wi-pin-dot {
+  fill: #0b080c;
+}
+.wi-tile {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+  animation: wiTile 6s ease-in-out infinite;
+}
+
+/* ---------- 05 signal ---------- */
+.wi-noise {
+  fill: none;
+  stroke: rgba(255, 138, 178, 0.5);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  opacity: 0;
+  animation: wiFade 0.8s 0.2s ease-out forwards;
+}
+.wi-divider {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
+}
+.wi-clean {
+  fill: none;
+  stroke: #7ee0b0;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(126, 224, 176, 0.4));
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: wiDraw 1.4s 0.7s ease-out forwards;
+}
+.wi-pip {
+  opacity: 0;
+  animation: wiFade 0.6s ease-out forwards;
+}
+.wi-pip-dot {
+  fill: #7ee0b0;
+}
+.wi-pip-text {
+  font-size: 9px;
+  fill: rgba(230, 220, 255, 0.7);
+}
+
+/* ---------- 06 loop ---------- */
+.wi-loop {
+  fill: none;
+  stroke: rgba(255, 138, 178, 0.75);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+  animation: wiSpin 9s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.wi-loop-head {
+  fill: rgba(255, 138, 178, 0.9);
+}
+.wi-escape {
+  opacity: 0;
+  animation: wiFade 0.9s 1.5s ease-out forwards;
+}
+.wi-escape-line {
+  stroke: #7ee0b0;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: wiDraw 1s 1.6s ease-out forwards;
+}
+.wi-escape-head {
+  fill: #7ee0b0;
+}
+
+/* ---------- keyframes ---------- */
+@keyframes wiGrowY {
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes wiFade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes wiDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes wiBulb {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+@keyframes wiDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@keyframes wiStamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) rotate(-12deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-8deg);
+  }
+}
+@keyframes wiTravel {
+  to {
+    stroke-dashoffset: -260;
+  }
+}
+@keyframes wiPinDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes wiTile {
+  0%,
+  100% {
+    fill: rgba(255, 255, 255, 0.08);
+  }
+  25% {
+    fill: rgba(194, 164, 255, 0.55);
+  }
+  50% {
+    fill: rgba(126, 224, 176, 0.45);
+  }
+  75% {
+    fill: rgba(255, 138, 178, 0.45);
+  }
+}
+@keyframes wiSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .work-illustration {
+    max-width: 330px;
+  }
+}
+@media only screen and (max-height: 780px) {
+  .work-illustration {
+    max-width: 270px;
+  }
+}
+@media only screen and (max-height: 650px) {
+  .work-illustration {
+    max-width: 230px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wi-svg *,
+  .work-illustration * {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
